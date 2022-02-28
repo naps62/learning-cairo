@@ -23,4 +23,13 @@ call: FORCE
 		--abi abi.json \
 		--function get_balance
 
+gettx: FORCE
+	starknet get_transaction --hash $(TX_HASH)
+
+getreceipt: FORCE
+	starknet get_transaction_receipt --hash $(TX_HASH)
+
+getcontract: FORCE
+	starknet get_full_contract --contract_address $(CONTRACT_ADDRESS)	
+
 FORCE: ;
